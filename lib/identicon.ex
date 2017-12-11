@@ -21,6 +21,7 @@ defmodule Identicon do
         image.hex
         |> Enum.chunk(3)
         |> Enum.map(&mirror_row/1)
+        |> List.flatten
     end
 
     defp mirror_row(hex_row) do
